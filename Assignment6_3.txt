@@ -1,0 +1,59 @@
+Explain the working of below pig script commands with an example:
+
+
+
+*. LOAD - Loading data from the file system.
+
+	eg: file1 = load '/input' using PigStorage(',') as (id:int, name:chararray, sal:int);
+
+
+
+* STORE - Stores data into file system.
+
+	eg: store file1 into '/user/file1';
+
+
+
+
+* DUMP - Display the result to the screen.
+
+	eg: dump file1;
+
+
+
+
+* FOREACH - Iterates the tuples of a relation for generating a data transformation.
+
+	eg: file2 = foreach file1 generate id;
+
+
+
+
+
+* FILTER - Select  set of tuples from a relation based on a condition.
+
+	eg: file3 = filter file1 by sal>2000;
+
+
+
+
+
+* GROUP BY - Group data in one or more relations.
+
+	eg: file4 = group file1 by id;
+
+
+
+
+
+* ORDER BY - Sort a relation based on one or more fields.
+
+	eg: file5 = order file1 by DESC;
+
+
+
+
+
+* DESCRIBE - Returns the schema of an alias.
+
+	eg: describe file1;
